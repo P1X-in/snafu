@@ -15,8 +15,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Snafu"
-run/main_scene="res://scenes/snafu.tscn"
+config/name="snafu"
+run/main_scene="res://scenes/intro.tscn"
 config/icon="res://icon.png"
 
 [display]
