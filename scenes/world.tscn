@@ -1,17 +1,20 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/assets/images/world_map.png" type="Texture" id=1]
 [ext_resource path="res://scenes/assets/images/kontur.png" type="Texture" id=2]
 [ext_resource path="res://scripts/world.gd" type="Script" id=3]
+[ext_resource path="res://scenes/the_world.tscn" type="PackedScene" id=4]
 
 [node name="world" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="map" type="Sprite" parent="."]
+visible = false
 texture = ExtResource( 1 )
 centered = false
 
 [node name="borders" type="Sprite" parent="."]
+visible = false
 z_index = 1
 texture = ExtResource( 2 )
 centered = false
@@ -21,4 +24,11 @@ centered = false
 [node name="timer" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
+
+[node name="the_world" parent="." instance=ExtResource( 4 )]
+
+[node name="Camera" parent="the_world" index="0"]
+current = true
 [connection signal="timeout" from="timer" to="." method="_disaster_happens"]
+
+[editable path="the_world"]
