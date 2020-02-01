@@ -3,6 +3,7 @@ extends Node2D
 onready var disasters = $"disasters"
 onready var disaster_timer = $"timer"
 onready var hud = $"../HUD"
+onready var snafu = $".."
 
 export var disaster_limit = 6
 
@@ -18,7 +19,6 @@ var score = 0
 func _ready():
     self.templates = [
         preload("res://scenes/reusable/disasters/meteor.tscn"),
-        preload("res://scenes/reusable/disasters/deadly_meteor.tscn"),
         preload("res://scenes/reusable/disasters/fire.tscn"),
         preload("res://scenes/reusable/disasters/heat.tscn"),
         preload("res://scenes/reusable/disasters/volcano.tscn"),
@@ -81,7 +81,7 @@ func kill_people(value):
         self.population = 0
         self.end_game()
     self.hud.set_population(self.population)
-    
+
 func end_game():
-    pass
+    self.snafu.end_game()
 
