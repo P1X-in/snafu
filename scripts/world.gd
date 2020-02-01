@@ -2,6 +2,7 @@ extends Node2D
 
 onready var disasters = $"disasters"
 onready var disaster_timer = $"timer"
+onready var hud = $"../HUD"
 
 export var disaster_limit = 6
 
@@ -9,10 +10,8 @@ var templates = []
 
 var extinguish_count = 0
 var disaster_count = 0
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var population = 7600000000
+var score = 0
 
 
 # Called when the node enters the scene tree for the first time.
@@ -69,4 +68,13 @@ func extinguished():
         self.extinguish_count -= extinguish_haste
         if self.disaster_timer.wait_time > 1.5:
             self.disaster_timer.wait_time -= 0.1
+
+func add_score(value):
+    self.score = self.score + value
+    self.hud.set_score(self.score)
+
+func kill_people(value):
+    self.population = self.population - value
+    self.hud.set_population(self.population)
+
     

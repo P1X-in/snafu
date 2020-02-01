@@ -19,6 +19,7 @@ func _disaster_tick():
     if not self.stopped:
         self.disaster_scale += self.growth_rate
         self._update_nova_size()
+        self.world.kill_people(int(self.disaster_scale * self.lethality))
     else:
         self.queue_free()
 
@@ -31,6 +32,9 @@ func _input_event(viewport, event, shape_idx):
             self.stopped = true
             
             self.world.extinguished()
+            self.world.add_score(100)
+        else:
+            self.world.add_score(15)
 
         self._update_nova_size()
 
