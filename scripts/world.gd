@@ -24,6 +24,7 @@ func _ready():
         preload("res://scenes/reusable/disasters/totalitarism.tscn"),
         preload("res://scenes/reusable/disasters/tornado.tscn"),
         preload("res://scenes/reusable/disasters/storm.tscn"),
+        preload("res://scenes/reusable/disasters/flood.tscn"),
        ]
 
 func _disaster_happens():
@@ -32,15 +33,15 @@ func _disaster_happens():
         self._spawn_new_disaster()
     if self.disaster_timer.wait_time < 1.6:
         self._spawn_new_disaster()
-    
+
 func _spawn_new_disaster():
     if self.disaster_count >= self.disaster_limit:
         return
-        
+
     var templates_size = self.templates.size()
     var random_disaster = randi() % templates_size
     var new_disaster = self.templates[random_disaster].instance()
-    
+
     self.disasters.add_child(new_disaster)
     new_disaster.position = self._get_random_position()
     self.disaster_count += 1
@@ -52,7 +53,7 @@ func _get_random_position():
     var screen_margin_y = 100
     var x = self._get_random_dimension(screen_size_x, screen_margin_x)
     var y = self._get_random_dimension(screen_size_y, screen_margin_y)
-    
+
     return Vector2(x,y)
 
 func _get_random_dimension(size, margin):
@@ -63,7 +64,7 @@ func extinguished():
     var extinguish_haste = 10
     self.extinguish_count += 1
     self.disaster_count -= 1
-    
+
     if self.extinguish_count > extinguish_haste:
         self.extinguish_count -= extinguish_haste
         if self.disaster_timer.wait_time > 1.5:
@@ -77,4 +78,3 @@ func kill_people(value):
     self.population = self.population - value
     self.hud.set_population(self.population)
 
-    
