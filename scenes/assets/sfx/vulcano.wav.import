@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/vulcano.wav-510ba85c70f8a88f57ae247320389557.sample"
+
+[deps]
+
+source_file="res://scenes/assets/sfx/vulcano.wav"
+dest_files=[ "res://.import/vulcano.wav-510ba85c70f8a88f57ae247320389557.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

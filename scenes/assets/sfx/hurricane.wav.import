@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/hurricane.wav-13d2fdda3c1592c056ceaa12d5ef9c99.sample"
+
+[deps]
+
+source_file="res://scenes/assets/sfx/hurricane.wav"
+dest_files=[ "res://.import/hurricane.wav-13d2fdda3c1592c056ceaa12d5ef9c99.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

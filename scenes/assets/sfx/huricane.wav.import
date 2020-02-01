@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/huricane.wav-197b75e8ada87b94226178cb94f2cbe0.sample"
+
+[deps]
+
+source_file="res://scenes/assets/sfx/huricane.wav"
+dest_files=[ "res://.import/huricane.wav-197b75e8ada87b94226178cb94f2cbe0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

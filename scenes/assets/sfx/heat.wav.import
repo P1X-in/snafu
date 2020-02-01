@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/heat.wav-a38bbba9d41f7c920525fc2ae3394839.sample"
+
+[deps]
+
+source_file="res://scenes/assets/sfx/heat.wav"
+dest_files=[ "res://.import/heat.wav-a38bbba9d41f7c920525fc2ae3394839.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
