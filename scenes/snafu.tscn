@@ -1,9 +1,99 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/world.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/assets/images/human.png" type="Texture" id=3]
+[ext_resource path="res://scenes/assets/fonts/UbuntuMono-Bold.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://scenes/assets/images/score2.png" type="Texture" id=5]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+size = 31
+font_data = ExtResource( 4 )
 
 [node name="snafu" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="world" parent="." instance=ExtResource( 2 )]
+
+[node name="HUD" type="Node2D" parent="."]
+
+[node name="HUD" type="MarginContainer" parent="HUD"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 21.0
+margin_top = 909.0
+margin_right = 262.0
+margin_bottom = 1016.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bars" type="VBoxContainer" parent="HUD/HUD"]
+material = SubResource( 1 )
+margin_right = 241.0
+margin_bottom = 107.0
+
+[node name="Bar" type="HBoxContainer" parent="HUD/HUD/Bars"]
+margin_right = 241.0
+
+[node name="Population" type="MarginContainer" parent="HUD/HUD/Bars/Bar"]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="HUD/HUD/Bars/Bar/Population"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="TextureRect" parent="HUD/HUD/Bars/Bar/Population/NinePatchRect"]
+margin_right = 120.0
+margin_bottom = 120.0
+rect_scale = Vector2( 0.5, 0.35 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Count" type="Label" parent="HUD/HUD/Bars/Bar/Population/NinePatchRect"]
+margin_left = 72.1918
+margin_top = 3.87903
+margin_right = 200.192
+margin_bottom = 40.879
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "10000000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="MarginContainer" parent="HUD/HUD/Bars/Bar"]
+margin_left = 4.0
+margin_right = 4.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="HUD/HUD/Bars/Bar/Score"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="TextureRect" parent="HUD/HUD/Bars/Bar/Score/NinePatchRect"]
+margin_left = -3.98285
+margin_top = 46.3291
+margin_right = 166.017
+margin_bottom = 216.329
+rect_scale = Vector2( 0.35, 0.25 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Count" type="Label" parent="HUD/HUD/Bars/Bar/Score/NinePatchRect"]
+margin_left = 66.7628
+margin_top = 50.9709
+margin_right = 194.763
+margin_bottom = 87.9709
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "10000000"
+__meta__ = {
+"_edit_use_anchors_": false
+}

@@ -1,0 +1,92 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/assets/images/human.png" type="Texture" id=1]
+[ext_resource path="res://scenes/assets/fonts/UbuntuMono-Bold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scenes/assets/images/score2.png" type="Texture" id=3]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+size = 31
+font_data = ExtResource( 2 )
+
+[node name="HUD" type="Node2D"]
+
+[node name="HUD" type="MarginContainer" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 21.0
+margin_top = 909.0
+margin_right = 262.0
+margin_bottom = 1016.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bars" type="VBoxContainer" parent="HUD"]
+material = SubResource( 1 )
+margin_right = 241.0
+margin_bottom = 107.0
+
+[node name="Bar" type="HBoxContainer" parent="HUD/Bars"]
+margin_right = 241.0
+
+[node name="Population" type="MarginContainer" parent="HUD/Bars/Bar"]
+
+[node name="Box" type="NinePatchRect" parent="HUD/Bars/Bar/Population"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="TextureRect" parent="HUD/Bars/Bar/Population/Box"]
+margin_right = 120.0
+margin_bottom = 120.0
+rect_scale = Vector2( 0.5, 0.35 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Count" type="Label" parent="HUD/Bars/Bar/Population/Box"]
+margin_left = 72.1918
+margin_top = 3.87903
+margin_right = 200.192
+margin_bottom = 40.879
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "10000000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="MarginContainer" parent="HUD/Bars/Bar"]
+margin_left = 4.0
+margin_right = 4.0
+
+[node name="Box" type="NinePatchRect" parent="HUD/Bars/Bar/Score"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="TextureRect" parent="HUD/Bars/Bar/Score/Box"]
+margin_left = -3.98285
+margin_top = 46.3291
+margin_right = 166.017
+margin_bottom = 216.329
+rect_scale = Vector2( 0.35, 0.25 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Count" type="Label" parent="HUD/Bars/Bar/Score/Box"]
+margin_left = 66.7628
+margin_top = 50.9709
+margin_right = 194.763
+margin_bottom = 87.9709
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "10000000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
