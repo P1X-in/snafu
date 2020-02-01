@@ -46,4 +46,4 @@ func _input_event(viewport, event, shape_idx):
 		self._update_nova_size()
 
 func _update_nova_size():
-	self.nova.scale = Vector2(1.0, 1.0) * self.disaster_scale
+	self.nova.rect_scale = Vector2(1.0, 1.0) * self.disaster_scale

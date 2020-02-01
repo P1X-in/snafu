@@ -7,15 +7,25 @@
 
 [node name="world" type="Node2D"]
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_vertical_guides_": [ 524.364 ]
+}
 
 [node name="map" type="Sprite" parent="."]
+position = Vector2( 0, -1 )
 texture = ExtResource( 1 )
 centered = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="borders" type="Sprite" parent="."]
 z_index = 1
 texture = ExtResource( 2 )
 centered = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="disasters" type="Node2D" parent="."]
 
