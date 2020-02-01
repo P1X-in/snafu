@@ -14,34 +14,34 @@ onready var nova = $"nova"
 onready var world = $"../../../world"
 
 func _ready():
-    self.size = self.nova.texture.get_size()
+	self.size = self.nova.texture.get_size()
 
 func _disaster_tick():
-    if not self.stopped:
-        self.disaster_scale += self.growth_rate
+	if not self.stopped:
+		self.disaster_scale += self.growth_rate
 
-        if self.disaster_scale > self.max_scale:
-            self.disaster_scale = self.max_scale
+		if self.disaster_scale > self.max_scale:
+			self.disaster_scale = self.max_scale
 
-        self._update_nova_size()
-        self.world.kill_people(int(self.disaster_scale * self.disaster_scale * self.lethality))
-    else:
-        self.queue_free()
+		self._update_nova_size()
+		self.world.kill_people(int(self.disaster_scale * self.disaster_scale * self.lethality))
+	else:
+		self.queue_free()
 
 func _input_event(viewport, event, shape_idx):
-    if event is InputEventMouseButton and event.pressed:
-        self.disaster_scale -= self.extinguish_rate
+	if event is InputEventMouseButton and event.pressed:
+		self.disaster_scale -= self.extinguish_rate
 
-        if self.disaster_scale < 0.0 and not self.stopped:
-            self.disaster_scale = 0.01
-            self.stopped = true
+		if self.disaster_scale < 0.0 and not self.stopped:
+			self.disaster_scale = 0.01
+			self.stopped = true
 
-            self.world.extinguished()
-            self.world.add_score(100)
-        else:
-            self.world.add_score(15)
+			self.world.extinguished()
+			self.world.add_score(100)
+		else:
+			self.world.add_score(15)
 
-        self._update_nova_size()
+		self._update_nova_size()
 
 func _update_nova_size():
-    self.nova.scale = Vector2(1.0, 1.0) * self.disaster_scale
+	self.nova.scale = Vector2(1.0, 1.0) * self.disaster_scale
