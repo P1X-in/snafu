@@ -1,8 +1,11 @@
 extends Node2D
 
 onready var disasters = $"disasters"
+onready var disaster_timer = $"timer"
 
 var templates = []
+
+var extinguish_count = 0
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -42,4 +45,13 @@ func _get_random_position():
 func _get_random_dimension(size, margin):
     var available_size = size - 2*margin
     return (randi() % available_size) + margin
+
+func extinguished():
+    var extinguish_haste = 10
+    self.extinguish_count += 1
+    
+    if self.extinguish_count > extinguish_haste:
+        self.extinguish_count -= extinguish_haste
+        if self.disaster_timer.wait_time > 1.0:
+            self.disaster_timer.wait_time -= 0.1
     
