@@ -91,6 +91,7 @@ margin_bottom = 161.43
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "10000000"
+align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
