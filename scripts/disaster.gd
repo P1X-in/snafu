@@ -2,7 +2,7 @@ extends Node2D
 
 export var growth_rate = 0.01
 export var extinguish_rate = 0.13
-export var lethality = 1000
+export var lethality = 100000
 
 var disaster_scale = 0.07
 var size

@@ -73,10 +73,10 @@ __meta__ = {
 }
 
 [node name="Icon" type="TextureRect" parent="HUD/Bars/Bar/Score/Box"]
-margin_left = 1646.86
-margin_top = 125.443
-margin_right = 1816.86
-margin_bottom = 295.443
+margin_left = 1822.18
+margin_top = 115.703
+margin_right = 1992.18
+margin_bottom = 285.703
 rect_scale = Vector2( 0.35, 0.25 )
 texture = ExtResource( 3 )
 __meta__ = {
@@ -84,10 +84,10 @@ __meta__ = {
 }
 
 [node name="Count" type="Label" parent="HUD/Bars/Bar/Score/Box"]
-margin_left = 1715.85
-margin_top = 128.327
-margin_right = 1843.85
-margin_bottom = 165.327
+margin_left = 1680.78
+margin_top = 124.43
+margin_right = 1808.78
+margin_bottom = 161.43
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "10000000"
