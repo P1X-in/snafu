@@ -22,7 +22,7 @@ _global_script_class_icons={
 
 config/name="snafu"
 run/main_scene="res://scenes/intro.tscn"
-config/icon="res://icon.png"
+config/icon="res://scenes/assets/images/deadly_meteor.png"
 
 [debug]
 
