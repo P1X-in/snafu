@@ -41,8 +41,10 @@ __meta__ = {
 }
 
 [node name="Icon" type="TextureRect" parent="HUD/Bars/Bar/Population/Box"]
-margin_right = 120.0
-margin_bottom = 120.0
+margin_left = -19.339
+margin_top = 124.824
+margin_right = 100.661
+margin_bottom = 244.824
 rect_scale = Vector2( 0.5, 0.35 )
 texture = ExtResource( 1 )
 __meta__ = {
@@ -50,10 +52,10 @@ __meta__ = {
 }
 
 [node name="Count" type="Label" parent="HUD/Bars/Bar/Population/Box"]
-margin_left = 72.1918
-margin_top = 3.87903
-margin_right = 200.192
-margin_bottom = 40.879
+margin_left = 40.5462
+margin_top = 130.461
+margin_right = 168.546
+margin_bottom = 167.461
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "10000000"
@@ -71,10 +73,10 @@ __meta__ = {
 }
 
 [node name="Icon" type="TextureRect" parent="HUD/Bars/Bar/Score/Box"]
-margin_left = -3.98285
-margin_top = 46.3291
-margin_right = 166.017
-margin_bottom = 216.329
+margin_left = 1646.86
+margin_top = 125.443
+margin_right = 1816.86
+margin_bottom = 295.443
 rect_scale = Vector2( 0.35, 0.25 )
 texture = ExtResource( 3 )
 __meta__ = {
@@ -82,10 +84,10 @@ __meta__ = {
 }
 
 [node name="Count" type="Label" parent="HUD/Bars/Bar/Score/Box"]
-margin_left = 66.7628
-margin_top = 50.9709
-margin_right = 194.763
-margin_bottom = 87.9709
+margin_left = 1715.85
+margin_top = 128.327
+margin_right = 1843.85
+margin_bottom = 165.327
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "10000000"
