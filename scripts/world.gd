@@ -3,9 +3,12 @@ extends Node2D
 onready var disasters = $"disasters"
 onready var disaster_timer = $"timer"
 
+export var disaster_limit = 6
+
 var templates = []
 
 var extinguish_count = 0
+var disaster_count = 0
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -25,12 +28,23 @@ func _ready():
        ]
 
 func _disaster_happens():
+    self._spawn_new_disaster()
+    if self.disaster_timer.wait_time < 2.0:
+        self._spawn_new_disaster()
+    if self.disaster_timer.wait_time < 1.6:
+        self._spawn_new_disaster()
+    
+func _spawn_new_disaster():
+    if self.disaster_count >= self.disaster_limit:
+        return
+        
     var templates_size = self.templates.size()
     var random_disaster = randi() % templates_size
     var new_disaster = self.templates[random_disaster].instance()
     
     self.disasters.add_child(new_disaster)
     new_disaster.position = self._get_random_position()
+    self.disaster_count += 1
 
 func _get_random_position():
     var screen_size_x = 1920
@@ -49,9 +63,10 @@ func _get_random_dimension(size, margin):
 func extinguished():
     var extinguish_haste = 10
     self.extinguish_count += 1
+    self.disaster_count -= 1
     
     if self.extinguish_count > extinguish_haste:
         self.extinguish_count -= extinguish_haste
-        if self.disaster_timer.wait_time > 1.0:
+        if self.disaster_timer.wait_time > 1.5:
             self.disaster_timer.wait_time -= 0.1
     
