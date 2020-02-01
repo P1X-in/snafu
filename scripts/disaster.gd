@@ -3,6 +3,7 @@ extends Node2D
 export var growth_rate = 0.01
 export var extinguish_rate = 0.13
 export var lethality = 125000
+export var max_scale = 2.0
 
 var disaster_scale = 0.07
 var size
@@ -18,6 +19,10 @@ func _ready():
 func _disaster_tick():
     if not self.stopped:
         self.disaster_scale += self.growth_rate
+
+        if self.disaster_scale > self.max_scale:
+            self.disaster_scale = self.max_scale
+
         self._update_nova_size()
         self.world.kill_people(int(self.disaster_scale * self.lethality))
     else:
@@ -30,7 +35,7 @@ func _input_event(viewport, event, shape_idx):
         if self.disaster_scale < 0.0 and not self.stopped:
             self.disaster_scale = 0.01
             self.stopped = true
-            
+
             self.world.extinguished()
             self.world.add_score(100)
         else:
