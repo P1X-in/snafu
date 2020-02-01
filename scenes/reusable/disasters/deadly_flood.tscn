@@ -17,3 +17,4 @@ stream = ExtResource( 3 )
 volume_db = 0.5
 pitch_scale = 0.8
 autoplay = true
+bus = "fx"

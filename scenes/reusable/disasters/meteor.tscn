@@ -8,3 +8,4 @@
 [node name="sound" parent="." index="4"]
 stream = ExtResource( 2 )
 autoplay = true
+bus = "fx"

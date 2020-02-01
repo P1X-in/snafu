@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/disaster.gd" type="Script" id=1]
 [ext_resource path="res://scenes/assets/images/meteor.png" type="Texture" id=3]
+[ext_resource path="res://scenes/assets/sfx/click.wav" type="AudioStream" id=4]
 
 [sub_resource type="StreamTexture" id=1]
 flags = 4
@@ -36,4 +37,8 @@ autostart = true
 shape = SubResource( 2 )
 
 [node name="sound" type="AudioStreamPlayer2D" parent="."]
+
+[node name="click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+bus = "fx"
 [connection signal="timeout" from="timer" to="." method="_disaster_tick"]
