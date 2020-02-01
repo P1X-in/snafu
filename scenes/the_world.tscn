@@ -1,36 +1,37 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scenes/assets/images/world_heightmap.png" type="Texture" id=1]
 [ext_resource path="res://scenes/assets/images/world_colors.png" type="Texture" id=2]
 [ext_resource path="res://scenes/reusable/camera.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/assets/sfx/earth.ogg" type="AudioStream" id=4]
 
-[sub_resource type="VisualShaderNodeTexture" id=13]
+[sub_resource type="VisualShaderNodeTexture" id=1]
 texture = ExtResource( 2 )
 texture_type = 1
 
-[sub_resource type="VisualShaderNodeInput" id=14]
+[sub_resource type="VisualShaderNodeInput" id=2]
 input_name = "uv"
 
-[sub_resource type="VisualShaderNodeInput" id=1]
+[sub_resource type="VisualShaderNodeInput" id=3]
 input_name = "vertex"
 
-[sub_resource type="VisualShaderNodeVectorDecompose" id=2]
+[sub_resource type="VisualShaderNodeVectorDecompose" id=4]
 
-[sub_resource type="VisualShaderNodeVectorCompose" id=3]
+[sub_resource type="VisualShaderNodeVectorCompose" id=5]
 
-[sub_resource type="VisualShaderNodeScalarOp" id=4]
+[sub_resource type="VisualShaderNodeScalarOp" id=6]
 
-[sub_resource type="VisualShaderNodeTexture" id=10]
+[sub_resource type="VisualShaderNodeTexture" id=7]
 texture = ExtResource( 1 )
 texture_type = 1
 
-[sub_resource type="VisualShaderNodeVectorDecompose" id=11]
+[sub_resource type="VisualShaderNodeVectorDecompose" id=8]
 
-[sub_resource type="VisualShaderNodeScalarOp" id=12]
+[sub_resource type="VisualShaderNodeScalarOp" id=9]
 default_input_values = [ 0, 0.0, 1, 1.5 ]
 operator = 2
 
-[sub_resource type="VisualShader" id=5]
+[sub_resource type="VisualShader" id=10]
 code = "shader_type spatial;
 uniform sampler2D tex_vtx_6 : hint_albedo;uniform sampler2D tex_frg_3 : hint_albedo;
 
@@ -105,38 +106,38 @@ void light() {
 "
 graph_offset = Vector2( 0, 138.343 )
 nodes/vertex/0/position = Vector2( 1180, 140 )
-nodes/vertex/2/node = SubResource( 1 )
+nodes/vertex/2/node = SubResource( 3 )
 nodes/vertex/2/position = Vector2( 80, 160 )
-nodes/vertex/3/node = SubResource( 2 )
+nodes/vertex/3/node = SubResource( 4 )
 nodes/vertex/3/position = Vector2( 304, 190 )
-nodes/vertex/4/node = SubResource( 3 )
+nodes/vertex/4/node = SubResource( 5 )
 nodes/vertex/4/position = Vector2( 900, 160 )
-nodes/vertex/5/node = SubResource( 4 )
+nodes/vertex/5/node = SubResource( 6 )
 nodes/vertex/5/position = Vector2( 680, 260 )
-nodes/vertex/6/node = SubResource( 10 )
+nodes/vertex/6/node = SubResource( 7 )
 nodes/vertex/6/position = Vector2( 60, 360 )
-nodes/vertex/7/node = SubResource( 11 )
+nodes/vertex/7/node = SubResource( 8 )
 nodes/vertex/7/position = Vector2( 280, 440 )
-nodes/vertex/8/node = SubResource( 12 )
+nodes/vertex/8/node = SubResource( 9 )
 nodes/vertex/8/position = Vector2( 520, 400 )
 nodes/vertex/connections = PoolIntArray( 2, 0, 3, 0, 4, 0, 0, 0, 3, 0, 4, 0, 3, 2, 4, 2, 3, 1, 5, 0, 5, 0, 4, 1, 6, 0, 7, 0, 7, 0, 8, 0, 8, 0, 5, 1 )
 nodes/fragment/0/position = Vector2( 1000, 140 )
-nodes/fragment/3/node = SubResource( 13 )
+nodes/fragment/3/node = SubResource( 1 )
 nodes/fragment/3/position = Vector2( 400, 140 )
-nodes/fragment/4/node = SubResource( 14 )
+nodes/fragment/4/node = SubResource( 2 )
 nodes/fragment/4/position = Vector2( 180, 280 )
 nodes/fragment/connections = PoolIntArray( 3, 0, 0, 0, 4, 0, 3, 0 )
 
-[sub_resource type="ShaderMaterial" id=6]
-shader = SubResource( 5 )
+[sub_resource type="ShaderMaterial" id=11]
+shader = SubResource( 10 )
 
-[sub_resource type="PlaneMesh" id=7]
-material = SubResource( 6 )
+[sub_resource type="PlaneMesh" id=12]
+material = SubResource( 11 )
 size = Vector2( 256, 256 )
 subdivide_width = 256
 subdivide_depth = 256
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=13]
 resource_name = "paralax"
 length = 4.0
 loop = true
@@ -153,7 +154,7 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 0, 0 ), Vector3( 1.128, 0, -1.137 ), Vector3( -2.172, 0, 2.295 ), Vector3( -3.101, 0, -1.572 ) ]
 }
 
-[sub_resource type="Environment" id=16]
+[sub_resource type="Environment" id=14]
 background_mode = 1
 background_color = Color( 0.976471, 0.917647, 0.776471, 1 )
 background_energy = 7.6
@@ -166,7 +167,7 @@ transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 140,
 
 [node name="world" type="MeshInstance" parent="."]
 transform = Transform( 0.999978, 0.00663427, 0, -0.00663413, 0.999957, -0.00365546, -4.3306e-05, 0.00652747, 0.559988, 0, 0, 0 )
-mesh = SubResource( 7 )
+mesh = SubResource( 12 )
 material/0 = null
 
 [node name="sun" type="DirectionalLight" parent="."]
@@ -179,7 +180,11 @@ directional_shadow_max_distance = 1024.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "paralax"
-anims/paralax = SubResource( 15 )
+anims/paralax = SubResource( 13 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 16 )
+environment = SubResource( 14 )
+
+[node name="sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true

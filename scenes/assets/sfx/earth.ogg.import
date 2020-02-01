@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/earth.ogg-171d006696983af735e4d72db5bf704c.oggstr"
+
+[deps]
+
+source_file="res://scenes/assets/sfx/earth.ogg"
+dest_files=[ "res://.import/earth.ogg-171d006696983af735e4d72db5bf704c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
