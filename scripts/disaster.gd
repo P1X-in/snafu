@@ -2,7 +2,7 @@ extends Node2D
 
 export var growth_rate = 0.01
 export var extinguish_rate = 0.13
-export var lethality = 125000
+export var lethality = 525000
 export var max_scale = 2.0
 
 var disaster_scale = 0.07
@@ -24,7 +24,7 @@ func _disaster_tick():
             self.disaster_scale = self.max_scale
 
         self._update_nova_size()
-        self.world.kill_people(int(self.disaster_scale * self.lethality))
+        self.world.kill_people(int(self.disaster_scale * self.disaster_scale * self.lethality))
     else:
         self.queue_free()
 

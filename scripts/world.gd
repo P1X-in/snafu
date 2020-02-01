@@ -18,6 +18,7 @@ var score = 0
 func _ready():
     self.templates = [
         preload("res://scenes/reusable/disasters/meteor.tscn"),
+        preload("res://scenes/reusable/disasters/deadly_meteor.tscn"),
         preload("res://scenes/reusable/disasters/fire.tscn"),
         preload("res://scenes/reusable/disasters/heat.tscn"),
         preload("res://scenes/reusable/disasters/volcano.tscn"),
@@ -76,5 +77,11 @@ func add_score(value):
 
 func kill_people(value):
     self.population = self.population - value
+    if self.population <= 0:
+        self.population = 0
+        self.end_game()
     self.hud.set_population(self.population)
+    
+func end_game():
+    pass
 
