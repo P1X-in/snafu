@@ -19,19 +19,19 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 margin_left = 21.0
 margin_top = 909.0
-margin_right = 262.0
-margin_bottom = 1016.0
+margin_right = 25.0
+margin_bottom = 910.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Bars" type="VBoxContainer" parent="HUD"]
 material = SubResource( 1 )
-margin_right = 241.0
-margin_bottom = 107.0
+margin_right = 4.0
+margin_bottom = 1.0
 
 [node name="Bar" type="HBoxContainer" parent="HUD/Bars"]
-margin_right = 241.0
+margin_right = 4.0
 
 [node name="Population" type="MarginContainer" parent="HUD/Bars/Bar"]
 
