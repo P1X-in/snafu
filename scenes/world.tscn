@@ -1,9 +1,14 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scenes/assets/images/world_map.png" type="Texture" id=1]
+[ext_resource path="res://scenes/reusable/disaster.tscn" type="PackedScene" id=2]
 
 [node name="world" type="Node2D"]
 
 [node name="map" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 centered = false
+
+[node name="disasters" type="Node2D" parent="."]
+
+[node name="disaster" parent="disasters" instance=ExtResource( 2 )]
