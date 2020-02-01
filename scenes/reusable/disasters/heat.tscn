@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://scenes/reusable/disaster.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/reusable/disaster_yellow.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/assets/images/heat.png" type="Texture" id=2]
 
 [node name="heat" instance=ExtResource( 1 )]
