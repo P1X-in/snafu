@@ -6,7 +6,7 @@
 
 [node name="deadly_fire" instance=ExtResource( 1 )]
 growth_rate = 0.004
-lethality = 5250000
+lethality = 52500000
 max_scale = 0.3
 
 [node name="icon" parent="." index="0"]
