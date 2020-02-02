@@ -4,6 +4,7 @@ export var growth_rate = 0.002
 export var extinguish_rate = 0.13
 export var lethality = 525000
 export var max_scale = 2.0
+export var score_reward = 1000
 
 var disaster_scale = 0.07
 var size
@@ -39,9 +40,9 @@ func _input_event(viewport, event, shape_idx):
             self.stopped = true
 
             self.world.extinguished()
-            self.world.add_score(100)
+            self.world.add_score(self.score_reward * 5)
         else:
-            self.world.add_score(15)
+            self.world.add_score(self.score_reward)
 
         self._update_nova_size()
 
