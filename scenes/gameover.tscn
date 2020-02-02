@@ -38,4 +38,13 @@ __meta__ = {
 [node name="end" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 autoplay = true
+
+[node name="score" type="Label" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="timeout" from="Timer" to="." method="_load_snafu"]

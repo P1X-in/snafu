@@ -5,6 +5,9 @@ var is_loading = false
 onready var loading = $"loading"
 onready var timer = $"Timer"
 
+func _ready():
+    $"score".set_text(str(global_score.get_score()))
+
 func _input(event):
     if Input.is_key_pressed(KEY_ESCAPE):
         get_tree().quit()
