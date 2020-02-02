@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/assets/images/world_map.png" type="Texture" id=1]
 [ext_resource path="res://scenes/assets/images/kontur.png" type="Texture" id=2]
 [ext_resource path="res://scripts/world.gd" type="Script" id=3]
 [ext_resource path="res://scenes/assets/sfx/earth.ogg" type="AudioStream" id=4]
+[ext_resource path="res://scenes/assets/sfx/death_at_my_heels.ogg" type="AudioStream" id=5]
 
 [node name="world" type="Node2D"]
 script = ExtResource( 3 )
@@ -35,6 +36,13 @@ autostart = true
 
 [node name="bg_sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+autoplay = true
+bus = "soundtrack"
+
+[node name="soundtrack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -12.0
+pitch_scale = 0.95
 autoplay = true
 bus = "soundtrack"
 [connection signal="timeout" from="timer" to="." method="_disaster_happens"]
