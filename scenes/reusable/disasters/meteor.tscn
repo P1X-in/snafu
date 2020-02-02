@@ -5,7 +5,7 @@
 
 [node name="fire" instance=ExtResource( 1 )]
 
-[node name="sound" parent="." index="4"]
+[node name="sound" parent="." index="3"]
 stream = ExtResource( 2 )
 autoplay = true
 bus = "fx"
