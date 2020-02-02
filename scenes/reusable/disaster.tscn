@@ -47,6 +47,6 @@ shape = SubResource( 1 )
 bus = "fx"
 
 [node name="timer" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.02
 autostart = true
 [connection signal="timeout" from="timer" to="." method="_disaster_tick"]
