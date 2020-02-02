@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/intro.jpg-d9789c7244bcf3967f959149f8363814.stex"
+path="res://.import/snafu.png-cb3bc7b6399b1f526bd44367234eae0e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/assets/images/intro.jpg"
-dest_files=[ "res://.import/intro.jpg-d9789c7244bcf3967f959149f8363814.stex" ]
+source_file="res://scenes/assets/images/snafu.png"
+dest_files=[ "res://.import/snafu.png-cb3bc7b6399b1f526bd44367234eae0e.stex" ]
 
 [params]
 
