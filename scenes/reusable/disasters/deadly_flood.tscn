@@ -9,10 +9,10 @@ growth_rate = 0.02
 lethality = 5250000
 max_scale = 0.3
 
-[node name="icon" parent="." index="1"]
+[node name="icon" parent="." index="0"]
 texture = ExtResource( 2 )
 
-[node name="sound" parent="." index="4"]
+[node name="sound" parent="." index="3"]
 stream = ExtResource( 3 )
 volume_db = 0.5
 pitch_scale = 0.8
