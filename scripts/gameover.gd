@@ -1,6 +1,7 @@
 extends Area2D
 
 var is_loading = false
+var click_delay = true
 
 onready var loading = $"loading"
 onready var timer = $"Timer"
@@ -13,7 +14,7 @@ func _input(event):
         get_tree().quit()
 
 func _input_event(viewport, event, shape_idx):
-    if self.is_loading:
+    if self.is_loading or self.click_delay:
         return
 
     if event is InputEventMouseButton and event.pressed:
@@ -23,3 +24,6 @@ func _input_event(viewport, event, shape_idx):
 
 func _load_snafu():
     get_tree().change_scene("scenes/snafu.tscn")
+
+func _delay_done():
+    self.click_delay = false
